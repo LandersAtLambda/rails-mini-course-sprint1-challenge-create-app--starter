@@ -22,10 +22,10 @@ You are going to create a rails application called `awesome_blog`. Your job is t
 
 ### Git Set Up
 
-- [ ] Fork the project into your GitHub user account
-- [ ] Clone the forked project into a directory on your machine
-- [ ] Create a pull request before you start working on the project requirements.  You will continuously push your updates throughout the project.
-- [ ] You are now ready to build this project with your preferred IDE
+-   [ ] Fork the project into your GitHub user account
+-   [ ] Clone the forked project into a directory on your machine
+-   [ ] Create a pull request before you start working on the project requirements. You will continuously push your updates throughout the project.
+-   [ ] You are now ready to build this project with your preferred IDE
 
 ## Minimum Viable Product
 
@@ -38,15 +38,32 @@ You will also create a `AppStats` class with numerous methods that you can use f
 These are the steps you should take in order to create your MVP:
 
 1. Create a new rails application called `awesome_blog`.
+
+    `rails new awesome_blog`
+
 2. Scaffold a posts resource that has the following attributes:
-   - title:string
-   - body:text
-   - published_at:datetime
+
+    - title:string
+    - body:text
+    - published_at:datetime
+
+    `rails generate scaffold Posts title body:text published_at:datetime`
+
 3. Scaffold a quotes resource that has the following attributes:
-   - body:text
-   - published_at:datetime
+
+    - body:text
+    - published_at:datetime
+
+    `rails generate scaffold Quotes body:text published_at:datetime`
+
 4. Run the migration command to update the database with the new resources.
+
+    `rails db:migrate`
+
 5. Run the rails server and use the appropriate url endpoints to add some `posts` and `quotes` to your application
+
+    `rails s`
+
 6. Create a single Module called WordCounter in the `app/models` folder.
 7. Write a method in the module named `word_count` that counts the total number of words in the `body` attribute of any file it is mixed into. If the body is `nil`, you should return `0`.
 8. The `Quote` and `Post` model files shoulde `include` the `WordCounter` module.
